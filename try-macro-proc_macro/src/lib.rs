@@ -94,10 +94,10 @@ pub fn __test(_: TokenStream) -> TokenStream {
 
     let mut fails = vec![];
     macro_rules! eq {
-        ($name:ident : {$($a:tt)*} => {$($b:tt)*}) => { #[allow(unused)] fn $name() {} {
+        ($name:ident : $a:tt => $b:tt) => { #[allow(unused)] fn $name() {} {
             let name = stringify!($name);
 
-            let (a, b) = (quote! { $($a)* }, quote! { $($b)* });
+            let (a, b) = (quote! $a, quote! $b);
             let a = TokenStream::from(try_macro(TokenStream::new(), a.into()));
             let b = TokenStream::from(b);
 

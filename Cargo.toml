@@ -1,6 +1,6 @@
 [package]
 name = "try-macro"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
 
 authors = ["A4-Tacks <wdsjxhno1001@163.com>"]
@@ -15,5 +15,5 @@ repository = "https://github.com/A4-Tacks/try-macro-rs"
 members = ["try-macro-proc_macro"]
 
 [dependencies]
-stable_try_trait_v2 = "1.75.1"
+stable_try_trait_v2 = ">= 1.75, <=1.86"
 try-macro-proc_macro = { version = "0.1.0", path = "try-macro-proc_macro" }
